@@ -1,4 +1,0 @@
-1.	Array, HashTable, Distributed System. How to handle when reach limit.
-
-	Array, when its full, increase the size. And when large enough, the insertion become O(n).
-
