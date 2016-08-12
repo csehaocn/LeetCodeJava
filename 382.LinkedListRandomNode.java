@@ -6,6 +6,10 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+/*
+Algorithm: Reservoir Sampling Algorithm
+*/
 public class Solution {
 
     /** @param head The linked list's head.
