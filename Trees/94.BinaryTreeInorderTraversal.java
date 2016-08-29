@@ -41,7 +41,7 @@ public class Solution {
         /* Pointer non-null edition
             To summary: the non-null edition seems always messier than null enable version.
             Due to multiple additional if elses, it might actually run slower.
-        */
+        
         
         List<Integer> res = new ArrayList<Integer>();
         if(null == root)
@@ -72,6 +72,45 @@ public class Solution {
             }
             
         }
+        */
+        
+        /* Pointer non-null edition, right left version
+            This is more complicated, since we have to add the root node in 
+            no matter if it right child is null or not.
+            So, in any case, in Order traversal is still of more complication.
+            more methods can still be applied on preOrder traversals.
+        */
+        
+        List<Integer> res = new ArrayList<Integer>();
+        if(null == root)
+            return res;
+        
+        Stack<TreeNode> s = new Stack<>();
+        TreeNode c = root;
+        while(null != c){
+            s.push(c);
+            if(null == c.left){
+                // We have to assign c = null here, 
+                // Is there is no more elements in s come around and 
+                // save c
+                // Program ends
+                c = null;
+                while(!s.isEmpty()){
+                    TreeNode t = s.pop();
+                    res.add(t.val);
+                    if(null == t.right){
+                        continue;
+                    }else{
+                        c = t.right;
+                        break;
+                    }
+                }
+            }else{
+                c = c.left;
+            }
+        }
+        
+        return res;
         
     }
 }
