@@ -1,0 +1,12 @@
+public class Solution {
+    public int[] constructRectangle(int area) {
+        int[] res = new int[2];
+        int q = (int)Math.sqrt(area);
+        while(area % q != 0){
+            q--;
+        }
+        res[0] = area/q;
+        res[1] = q;
+        return res;
+    }
+}
