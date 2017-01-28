@@ -9,6 +9,12 @@
  */
 public class Solution {
     
+    // 要点
+    // 1. GCD pair
+    // 2. 斜率，正负 
+    // 3. Conor case. Overlap, vertical
+    // 4. 
+    
     // 显然用斜率做Key是有精度问题的
     // 虽然pass了
     // 正确的做法应该是用除去最大公约数的pair
