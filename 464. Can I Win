@@ -2,6 +2,8 @@
 public class Solution {
 
     //System.out.println("dt = " + dt);
+    // 1. 当然除了设置比特以外, 其他人的解法里, 有采用Arrays.toString()来做HashMap的key的方法. 这个在数量比较大, bit无法胜任的时候可以使用.
+    
         // 这种解法系统的一个漏洞是
         // 当总之大于可取的数字的总和的时候
         // 及无论哪个选手都无法获胜的时候
