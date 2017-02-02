@@ -3,6 +3,43 @@ public class Solution {
 //  2.  另外一个切入点是先解决一维, 把问题化简为一个更简单的问题, 寻找突破点
 //  3.  同时, 这里面包含了一个简单的leetcode题目, 寻找一维度上到所有点最短的点, 如果没有做过这个子题目, 很有可能是不会知道这个点是median点, 而以为是average
 //      点的, 所以, 聪明是一方面, 但是积累更加是必不可少啊.
+
+//  4.  这个题目另外的更简便的解法, 利用median点的性质, 不需要找确切的median点, 而利用median两边的成对的点, say l m r, r - l就必然是他们到median点m的
+//      距离之和.
+
+/*
+int l = 0; 
+        int r = n-1;
+        int res = 0;
+        while(l < r){
+            if(0 == cc[l]){
+                l++;
+            }else if(0 == cc[r]){
+                r--;
+            }else{
+                cc[l]--;
+                cc[r]--;
+                res += r - l;
+            }
+        }
+        
+        l = 0; 
+        r = m-1;
+        while(l < r){
+            if(0 == rc[l]){
+                l++;
+            }else if(0 == rc[r]){
+                r--;
+            }else{
+                rc[l]--;
+                rc[r]--;
+                res += r - l;
+            }
+        }
+        
+        return res;
+
+*/
     public int minTotalDistance(int[][] grid) {
         if(null == grid)
             return 0;
