@@ -2,6 +2,14 @@ public class Solution {
     
     // 双向BFS时, 要统一成一个函数, interface需要的参数还是挺tricky的, 其他的没有什么难点
     // 需要两个queue, 两个visited set 
+    
+    // From Other's Code
+    // 其实BFS的Queue完全可以用Set来做, 不像Dijstra, 是不用什么顺序的, 当然用Set也并没有带来什么好处.
+    // 然而在双向BFS的时候好处就有了, 因为你可以向Set Query contains, 你就不用单独维护两个visited set, 
+    // 而直接向对方的frontier set query contains就可以了. 
+    // 只需要一个visited set来做去重
+    
+    // 当然我并不认为这个是他更快的原因, 大部分的原因是因为搜索交换, 总是搜索比较小的那个frontier
     public static final int aLen = 26;
     
     private boolean expand(Set<String> wordSet, Set<String> vself, Set<String> vother, Queue<String> q){
