@@ -13,6 +13,10 @@ public class Solution {
     
     // 当然还要记住char也是可以遍历的 for(char cj = 'a'; cj < 'z'; ++cj)
     
+    // 做到了这些以后 beat了97%的code
+    // 而且双向BFS还是明显比单向FBS快很多的
+    // 在这些test case中, 快了四倍以上, 还是很make sense的.
+    
     public static final int aLen = 26;
     
     private boolean expand(Set<String> wordSet, Set<String> vself, Set<String> vother, Queue<String> q){
@@ -23,9 +27,9 @@ public class Solution {
             char[] ca = s.toCharArray();
             for(int k = 0; k < s.length(); ++k){
                 char c = s.charAt(k);
-                for(int j = 0; j < aLen; ++j){
-                    if('a' + j != c){
-                        ca[k] = (char)('a' + j);
+                for(char cj = 'a'; cj < 'z'; ++cj){
+                    if(cj != c){
+                        ca[k] = (char)(cj);
                         String st = new String(ca);
                         if(wordSet.contains(st) && !vself.contains(st)){
                             q.add(st);
@@ -67,17 +71,17 @@ public class Solution {
         
         while(!hq.isEmpty()&&!tq.isEmpty()){
             
-            boolean hr = expand(wordSet, hv, tv, hq);
-            len++;
-            if(hr)
-                return len;
-            
-            
-            boolean tr = expand(wordSet, tv, hv, tq);
-            len++;
-            if(tr)
-                return len;
-            
+            if(hq.size() < tq.size()){
+                boolean hr = expand(wordSet, hv, tv, hq);
+                len++;
+                if(hr)
+                    return len;
+            }else{
+                boolean tr = expand(wordSet, tv, hv, tq);
+                len++;
+                if(tr)
+                    return len;
+            }
         }
         
         return 0;
