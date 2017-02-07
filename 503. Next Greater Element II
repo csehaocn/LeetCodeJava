@@ -37,7 +37,15 @@ int findComplement(int num) {
     return num ^ mask;
 }
 
-*/    
+*/
+
+/* 用log也是一个, 可能是, 一个好的取得最高位的方法, log2 应该不存在很大的精度问题, 或许也是bite操作实现的
+   public:
+    int findComplement(int num) {
+        return ~num & ((1 <<(int)log2(num))-1);
+    }
+  };
+*/
     
     
     public int[] nextGreaterElements(int[] nums) {
