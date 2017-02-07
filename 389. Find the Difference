@@ -1,4 +1,6 @@
 public class Solution {
+
+// 更有趣的答案包括bit manipulation.
     public char findTheDifference(String s, String t) {
         int[] c = new int[256];
         for(int i = 0; i < s.length(); ++i){
