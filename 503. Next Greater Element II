@@ -1,6 +1,16 @@
 public class Solution {
 // 据说,  遇到循环数组的问题的时候, 用两倍循环是最常用的方法
 // 当然虽然都是O(n), 还是要多一些开销的. 
+
+// 其他的API Arrays.fill(res, -1);
+// 以及fill 2d Array
+// double[][] matrix = new double[20][4];
+
+// Fill each row with 1.0
+// for (double[] row: matrix)
+//    Arrays.fill(row, 1.0);
+    
+    
     public int[] nextGreaterElements(int[] nums) {
         if(null == nums)
             return null;
