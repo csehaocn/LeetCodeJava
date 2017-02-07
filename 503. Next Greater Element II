@@ -1,0 +1,27 @@
+public class Solution {
+// 据说,  遇到循环数组的问题的时候, 用两倍循环是最常用的方法
+// 当然虽然都是O(n), 还是要多一些开销的. 
+    public int[] nextGreaterElements(int[] nums) {
+        if(null == nums)
+            return null;
+        int len = nums.length;
+        if(0 == len)
+            return new int[0];
+            
+        Stack<Integer> st = new Stack<Integer>();
+        int[] res = new int[len];
+        for(int i = 0; i < len; ++i)
+            res[i] = -1;
+        
+        for(int i = 0; i < len*2; ++i){
+            int n = nums[i%len];
+            while(!st.isEmpty() && nums[st.peek()] < n ){
+                res[st.pop()] = n;
+            }
+            if(i < len)
+                st.add(i);
+        }
+        
+        return res;
+    }
+}
