@@ -8,6 +8,8 @@ public class Solution {
 // 而且还有一些其他的解法
 // 1. 遇到1增加变量
 //    遇到非1置0.
+
+// 事实上大部分都是用的计数法。。。
     public int findMaxConsecutiveOnes(int[] nums) {
         if(null == nums)
             return 0;
