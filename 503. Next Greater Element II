@@ -1,6 +1,7 @@
 public class Solution {
 // 据说,  遇到循环数组的问题的时候, 用两倍循环是最常用的方法
 // 当然虽然都是O(n), 还是要多一些开销的. 
+// 也有人做了一个2倍array的copy, 这种做法对复杂的问题还是不错的 
 
 // 其他的API Arrays.fill(res, -1);
 // 以及fill 2d Array
