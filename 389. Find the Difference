@@ -1,0 +1,16 @@
+public class Solution {
+    public char findTheDifference(String s, String t) {
+        int[] c = new int[256];
+        for(int i = 0; i < s.length(); ++i){
+            c[(int)s.charAt(i)]++;
+            c[(int)t.charAt(i)]--;
+        }
+        c[(int)t.charAt(t.length()-1)]--;
+        for(int i = 0; i < 256; ++i){
+            if(-1 == c[i]){
+                return (char)i;
+            }
+        }
+        return ' ';
+    }
+}
