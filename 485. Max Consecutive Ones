@@ -4,6 +4,10 @@ public class Solution {
 // 感觉特别简单, 在i越界以后没有进行判断
 // 结果导致循环不变式有边界条件
 // 
+
+// 而且还有一些其他的解法
+// 1. 遇到1增加变量
+//    遇到非1置0.
     public int findMaxConsecutiveOnes(int[] nums) {
         if(null == nums)
             return 0;
