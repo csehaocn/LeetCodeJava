@@ -9,10 +9,15 @@ public class Solution {
     // 只是未必会很快
     // 事实上 相当慢.....
     
+
     /*
     
     public List<String> fizzBuzz(int n) {
         List<String> res = new ArrayList<>(n);
+        // 事实上我的想法有点2, 
+        // 前面有这个循环在这里, 直接加总是最好的
+        // 如果不想用mod, 那么设置一个3位周期的fizz变量和5位周期的buzz变量也可以
+        // 不同的是, 还是3O(n). 
         for(int i = 1; i <= n; ++i){
             res.add("" + i);
         }
