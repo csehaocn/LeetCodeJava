@@ -10,6 +10,34 @@ public class Solution {
 // Fill each row with 1.0
 // for (double[] row: matrix)
 //    Arrays.fill(row, 1.0);
+
+// 另外一种有趣的寻找mask的方法
+// 也是log32的寻找最高bit的方法
+// 例如 num = 1010101
+// mask = 1010101
+// mask |= mask >> 1;
+// 0001010101
+// 0000101010
+// 00011xxxxx
+
+// mask |= mask >> 2;
+// 00011xxxxx
+// 0000011xxxxx
+// 0001111xxx
+
+// 对于32位, 做5次, 一直到16就可以了. 
+/*
+int findComplement(int num) {
+    int mask = num;
+    mask |= mask >> 1;
+    mask |= mask >> 2;
+    mask |= mask >> 4;
+    mask |= mask >> 8;
+    mask |= mask >> 16;
+    return num ^ mask;
+}
+
+*/    
     
     
     public int[] nextGreaterElements(int[] nums) {
