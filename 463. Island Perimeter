@@ -2,6 +2,10 @@ public class Solution {
     // 当然全部统计是最基本的方法
     // 对于方块形, 所有的边都有一条对边
     // 所以只需要统计一半的边就可以了.
+    
+    // 其他的方法有统计island块数和相邻数, 然后减法. 相邻数x2为失去的边
+    
+    
     public int islandPerimeter(int[][] grid) {
         if(null == grid)
             return 0;
