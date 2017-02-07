@@ -1,0 +1,15 @@
+public class Solution {
+    // 题目是很简单, 这种用set持续反转的方法挺有趣的
+    // 值得借鉴
+    // 问题是用set不一定比256 array块
+    public boolean canPermutePalindrome(String s) {
+        Set<Character> set=new HashSet<Character>();
+        for(int i=0; i<s.length(); ++i){
+            if (!set.contains(s.charAt(i)))
+                set.add(s.charAt(i));
+            else 
+                set.remove(s.charAt(i));
+        }
+        return set.size()==0 || set.size()==1;
+    }
+}
