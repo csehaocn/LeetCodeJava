@@ -1,0 +1,28 @@
+public class Solution {
+    public boolean verifyPreorder(int[] preorder) {
+        if(null == preorder)
+            return false;
+        int len = preorder.length;
+        if(0 == len)
+            return true;
+        Stack<Integer> st = new Stack<>();
+        
+        Integer mustLargerthan = null;
+        
+        for(int i : preorder){
+            
+            if(null != mustLargerthan && i <= mustLargerthan)
+                return false;
+            
+            while(!st.isEmpty() && st.peek() < i){
+                mustLargerthan = st.pop();
+            }
+            if(!st.isEmpty() && st.peek() == i)
+                return false;
+            st.push(i);
+            
+        }
+        
+        return true;
+    }
+}
