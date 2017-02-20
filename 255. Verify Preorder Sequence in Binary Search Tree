@@ -26,3 +26,23 @@ public class Solution {
         return true;
     }
 }
+
+// Other very interesting posts, including recover inorder traversal from preorder traversal of a BST
+/**/
+same logic, use one more stack to be easier to understand
+Basically this is how to recover inorder sequence from preorder sequence of a BST.
+
+public boolean verifyPreorder(int[] preorder) {
+    Stack<Integer> stack = new Stack<>();
+    Stack<Integer> inorder = new Stack<>();
+    
+    for(int v : preorder){
+        if(!inorder.isEmpty() && v < inorder.peek())
+            return false;
+        while(!stack.isEmpty() && v > stack.peek()){
+            inorder.push(stack.pop());
+        }
+        stack.push(v);
+    }
+    return true;
+}
